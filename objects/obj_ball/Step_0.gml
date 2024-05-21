@@ -11,11 +11,11 @@ if(keyboard_check_pressed(vk_tab)){
 }
 */
 
-if(place_meeting(x,y+sign(y_speed)*2, obj_bush_move)){
+if(place_meeting(x,y+y_speed, obj_bush_move)){
 	y_speed *= -1;
 	y_speed += 3;
 }
-if(place_meeting(x+sign(x_speed)*15,y, obj_bush_move)){
+if(place_meeting(x+x_speed,y, obj_bush_move)){
 	x_speed *= -1;
 	x_speed += 3;
 }
@@ -39,19 +39,19 @@ if (!in_movimento && lancio) {
 if (in_movimento) {
 	instance_destroy(obj_arrow);
 	
-    if (place_meeting(x+sign(x_speed)*2, y, obj_collision)) {
+    if (place_meeting(x+x_speed, y, obj_collision)) {
 		audio_play_sound(snd_ball, 0, false);
         x_speed *= -1;
     } 
-	else if(place_meeting(x, y+sign(y_speed)*2, obj_collision)){
+	else if(place_meeting(x, y+y_speed, obj_collision)){
 		audio_play_sound(snd_ball, 0, false);
 		y_speed *= -1;
 	}
-	else if (place_meeting(x, y+sign(y_speed), obj_collision_top) || place_meeting(x, y+sign(y_speed), obj_collision_bottom)) {
+	else if (place_meeting(x, y+y_speed, obj_collision_top)
+	|| place_meeting(x, y+sign(y_speed), obj_collision_bottom)) {
 		audio_play_sound(snd_ball, 0, false);
 		y_speed *= -1;
     }
-	
 	
 	
 	/*
