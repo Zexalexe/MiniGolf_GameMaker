@@ -1,4 +1,4 @@
-//@create by @mailat elisei 
+//@create by @mailat elisei - full repository on GitHub at https://github.com/Zexalexe/MiniGolf_GameMaker.git
 
 var dir = point_direction(x, y, mouse_x, mouse_y);
 var attrito = 0.99;
